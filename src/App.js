@@ -11,8 +11,8 @@ const { store } = configureStore()
 const App = () => (
   <Provider store={store}>
     <Router>
-      <Home path="/" />
-      <Login path="/login" />
+      <Home path="/admin" />
+      <Login path="/admin/login" />
     </Router>
   </Provider>
 )

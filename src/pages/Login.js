@@ -52,7 +52,7 @@ class Login extends React.Component<Props, State> {
     const { auth } = this.props
     const { email, password } = this.state
     if (auth.ok) {
-      return <Redirect noThrow to="/" />
+      return <Redirect noThrow to="/admin" />
     }
     return (
       <Layout>

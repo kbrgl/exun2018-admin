@@ -30,7 +30,7 @@ class Home extends React.Component<Props> {
   render() {
     const { auth, posts, admins, createAdmin } = this.props
     if (!auth.ok) {
-      return <Redirect noThrow to="/login" />
+      return <Redirect noThrow to="/admin/login" />
     }
     return (
       <Layout>
