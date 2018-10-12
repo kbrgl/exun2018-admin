@@ -1,19 +1,20 @@
+// @flow
 import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { Router } from '@reach/router'
+import { Provider } from 'react-redux'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import configureStore from './store'
+
+const { store } = configureStore()
 
 const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-        Learn React
-      </a>
-    </header>
-  </div>
+  <Provider store={store}>
+    <Router>
+      <Home path="/" />
+      <Login path="/login" />
+    </Router>
+  </Provider>
 )
 
 export default App
