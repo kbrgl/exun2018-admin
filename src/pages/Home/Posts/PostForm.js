@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { createPost, editPost } from '../../store/actions'
+import { createPost, editPost } from '../../../store/actions'
 
-import Button from '../../components/Button'
+import Button from '../../../components/Button'
 
 type Props = {
   createPost: Function,

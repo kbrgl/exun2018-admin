@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { connect } from 'react-redux'
 import { format } from 'date-fns'
 
-import { deletePost } from '../../store/actions'
-import type { Post as PostType } from '../../types'
+import { deletePost } from '../../../store/actions'
+import type { Post as PostType } from '../../../types'
 
 const formatDate = date => format(date, 'd MMM yyyy, hh:mm:ss')
 

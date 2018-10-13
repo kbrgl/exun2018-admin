@@ -2,10 +2,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import type { Admin as AdminType } from '../../types'
+import type { Admin as AdminType } from '../../../types'
 import Admin from './Admin'
 
-import Button from '../../components/Button'
+import Button from '../../../components/Button'
 
 const AdminList = styled.div`
   max-height: 250px;

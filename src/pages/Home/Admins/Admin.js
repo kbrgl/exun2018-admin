@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
 
-import { deleteAdmin } from '../../store/actions'
-import type { Admin as AdminType } from '../../types'
+import { deleteAdmin } from '../../../store/actions'
+import type { Admin as AdminType } from '../../../types'
 
-import Button from '../../components/Button'
+import Button from '../../../components/Button'
 
 const AdminWrapper = styled.div`
   height: 60px;

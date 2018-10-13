@@ -3,7 +3,7 @@ import React from 'react'
 
 import PostForm from './PostForm'
 import Post from './Post'
-import type { Post as PostType } from '../../types'
+import type { Post as PostType } from '../../../types'
 
 type Props = {
   posts: PostType[],
