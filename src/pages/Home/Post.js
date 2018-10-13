@@ -94,7 +94,7 @@ class Post extends React.Component<Props> {
         </div>
         <p
           style={{
-            whiteSpace: 'pre',
+            whiteSpace: 'pre-wrap',
           }}
         >
           {body}
