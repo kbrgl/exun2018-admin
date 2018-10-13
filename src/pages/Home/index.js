@@ -45,9 +45,11 @@ type Props = {
 }
 class Home extends React.Component<Props> {
   componentDidMount() {
-    const { fetchPosts, fetchAdmins } = this.props
-    fetchPosts()
-    fetchAdmins()
+    const { auth, fetchPosts, fetchAdmins } = this.props
+    if (auth.ok) {
+      fetchPosts()
+      fetchAdmins()
+    }
   }
 
   render() {
