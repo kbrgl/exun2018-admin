@@ -3,6 +3,8 @@
 export const LOGIN = 'LOGIN'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_FAILURE = 'LOGIN_FAILURE'
+export const LOGOUT = 'LOGOUT'
+export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS'
 export const POSTS_FETCH = 'POSTS_FETCH'
 export const POSTS_FETCH_SUCCESS = 'POSTS_FETCH_SUCCESS'
 export const POST_CREATE = 'POST_CREATE'
@@ -22,6 +24,10 @@ export const login = (email: string, password: string) => ({
   type: LOGIN,
   email,
   password,
+})
+
+export const logout = () => ({
+  type: LOGOUT,
 })
 
 export const fetchPosts = () => ({

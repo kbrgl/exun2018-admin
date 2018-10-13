@@ -92,7 +92,13 @@ class Post extends React.Component<Props> {
             #{id}
           </span>
         </div>
-        <p>{body}</p>
+        <p
+          style={{
+            whiteSpace: 'pre',
+          }}
+        >
+          {body}
+        </p>
         <PostMetadata>
           Published <Box>{formatDate(created_at)}</Box>, updated at{' '}
           <Box>{formatDate(updated_at)}</Box>

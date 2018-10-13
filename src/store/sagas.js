@@ -18,6 +18,8 @@ import {
   ADMIN_DELETE_SUCCESS,
   ADMIN_CREATE,
   ADMIN_CREATE_SUCCESS,
+  LOGOUT,
+  LOGOUT_SUCCESS,
 } from './actions'
 
 const getTokenFromState = state => state.auth.token
@@ -28,6 +30,11 @@ function* login(action) {
     localStorage.setItem('token', res.token)
     yield put({ type: LOGIN_SUCCESS, token: res.token })
   } else yield put({ type: LOGIN_FAILURE, message: res.message })
+}
+
+function* logout() {
+  localStorage.removeItem('token')
+  yield put({ type: LOGOUT_SUCCESS })
 }
 
 function* fetchPosts() {
@@ -94,6 +101,7 @@ function* deleteAdmin(action) {
 function* rootSaga() {
   yield all([
     takeLatest(LOGIN, login),
+    takeLatest(LOGOUT, logout),
     takeLatest(POSTS_FETCH, fetchPosts),
     takeLatest(POST_CREATE, createPost),
     takeLatest(POST_DELETE, deletePost),

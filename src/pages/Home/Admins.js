@@ -47,7 +47,11 @@ class Admins extends React.Component<Props> {
   render() {
     const { admins } = this.props
     return (
-      <div>
+      <div
+        style={{
+          marginBottom: '6rem',
+        }}
+      >
         <h2
           style={{
             fontSize: '2rem',
@@ -60,7 +64,7 @@ class Admins extends React.Component<Props> {
             <Admin key={admin.id} {...admin} />
           ))}
         </AdminList>
-        <Button style={{ paddingLeft: 0 }} type="button" onClick={this.create}>
+        <Button style={{ paddingLeft: 0, paddingTop: '1rem' }} type="button" onClick={this.create}>
           Create
         </Button>
       </div>

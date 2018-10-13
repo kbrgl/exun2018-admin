@@ -8,6 +8,7 @@ import {
   ADMINS_FETCH_SUCCESS,
   ADMIN_CREATE_SUCCESS,
   ADMIN_DELETE_SUCCESS,
+  LOGOUT_SUCCESS,
 } from './actions'
 
 const token = localStorage.getItem('token')
@@ -49,6 +50,14 @@ function app(state = initialState, action) {
         auth: {
           ok: false,
           message: action.message,
+        },
+      }
+    case LOGOUT_SUCCESS:
+      return {
+        ...state,
+        auth: {
+          ok: false,
+          message: '',
         },
       }
     case POSTS_FETCH_SUCCESS:
