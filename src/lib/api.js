@@ -42,7 +42,10 @@ async function createPost(token, title, body, options) {
   })
   const json = await response.json()
   // TODO: handle error
-  return json.post
+  if (json.post) {
+    return json.post
+  }
+  return null
 }
 
 async function deletePost(token, id) {

@@ -46,10 +46,12 @@ function* createPost(action) {
   const token = yield select(getTokenFromState)
   // TODO: check result
   const post = yield call(api.createPost, token, action.title, action.body, action.options)
-  yield put({
-    type: POST_CREATE_SUCCESS,
-    post,
-  })
+  if (post) {
+    yield put({
+      type: POST_CREATE_SUCCESS,
+      post,
+    })
+  }
 }
 
 function* deletePost(action) {
