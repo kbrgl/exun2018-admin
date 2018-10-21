@@ -37,13 +37,12 @@ const Column = styled.div`
   float: left;
   box-sizing: border-box;
 
-  &:first-child {
-    margin-left: 0;
-  }
-
   @media (min-width: 550px) {
     width: ${props => props.width};
-    margin-left: ${props => props.marginLeft};
+    &:first-child {
+      margin-left: ${props => props.marginLeft || 0};
+    }
+    margin-left: ${props => props.marginLeft || '4%'};
   }
 `
 
@@ -53,7 +52,7 @@ type Props = {
   children?: Node,
 }
 
-export default ({ size, offset, children }: Props = {}) => {
+export default ({ size, offset, children, ...props }: Props = {}) => {
   const width = sizes[size - 1] || '100%'
   let marginLeft
   if (offset) {
@@ -61,11 +60,11 @@ export default ({ size, offset, children }: Props = {}) => {
   } else if (width === '100%') {
     marginLeft = 0
   } else {
-    marginLeft = '4%'
+    marginLeft = null
   }
 
   return (
-    <Column marginLeft={marginLeft} width={width}>
+    <Column marginLeft={marginLeft} width={width} {...props}>
       {children}
     </Column>
   )

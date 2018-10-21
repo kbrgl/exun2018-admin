@@ -54,7 +54,6 @@ class PostForm extends React.Component<Props> {
           padding: '50px 30px',
           border: '1px solid #eaeaef',
           borderRadius: 4,
-          boxShadow: '0 2px 8px 2px rgba(0, 0, 0, 0.025)',
         }}
       >
         {/* TODO: show error */}
@@ -62,7 +61,6 @@ class PostForm extends React.Component<Props> {
           type="number"
           style={{
             width: 125,
-            borderWidth: 1,
             borderRadius: 100,
             padding: 20,
           }}
@@ -77,9 +75,6 @@ class PostForm extends React.Component<Props> {
         <br />
         <br />
         <input
-          style={{
-            width: '100%',
-          }}
           type="text"
           placeholder="Title"
           value={title}
@@ -92,9 +87,6 @@ class PostForm extends React.Component<Props> {
         <br />
         <br />
         <textarea
-          style={{
-            width: '100%',
-          }}
           placeholder="Body"
           value={body}
           onChange={event => {
